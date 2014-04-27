@@ -1,10 +1,12 @@
-name: Simply Grey
+name: alixedi
 markdown: redcarpet
 pygments: true
-github: https://www.github.com/exaem
-about: I am an independent developer from the sunny UK. I dabble in Ruby, play in C and I'm an avid systems administrator.
+github: https://www.github.com/alixedi
+about: I am a hacker from Pakistan. I love Minimalism, Python and Books.
 urls:
     - text: github
-      url: https://github.com/exaem
+      url: https://github.com/alixedi
     - text: email
-      url: mailto:exaem@exaem.co.uk
+      url: mailto:alixedi@gmail.com
+    - text: twitter
+      url: https://twitter.com/alixedi
