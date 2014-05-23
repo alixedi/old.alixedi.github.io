@@ -1,12 +1,7 @@
-name: alixedi
-markdown: redcarpet
 pygments: true
-github: https://www.github.com/alixedi
-about: I am a hacker from Pakistan. I love Minimalism, Python and Books.
-urls:
-    - text: github
-      url: https://github.com/alixedi
-    - text: email
-      url: mailto:alixedi@gmail.com
-    - text: twitter
-      url: https://twitter.com/alixedi
+permalink: /otter-pop/:year/:month/:day/:title
+markdown: rdiscount
+exclude: ['.git']
+name: "Otter Pop"
+description: "The world's greated jekyll theme"
+url: http://tybenz.com/otter-pop

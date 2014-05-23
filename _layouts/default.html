@@ -1,62 +1,51 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>{% if page.title %} {{ page.title }} {% else %} {{ site.name }} {% endif %}</title>
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ site.description }}</title>
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
-        
-        <!-- Bootstrap core CSS -->
-    	<link href="/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="apple-touch-img/logo-precomposed" href="/otter-pop/img/logo.jpg">
+    <link rel="apple-touch-img/logo" href="/otter-pop/img/logo.jpg">
+    <link rel="apple-touch-img/logo" sizes="72x72" href="/otter-pop/img/logo.jpg">
+    <link rel="apple-touch-img/logo" sizes="114x114" href="/otter-pop/img/logo.jpg">
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="img/logo.jpg" rel="shortcut icon">
+</head>
+<body>
+  <div class="sidebar">
+    <a href="/" class="logo">
+      <img src="/otter-pop/img/logo.jpg">
+    </a>
 
-    </head>
-    <body>
+    <ul class="nav">
+      <div class="nav-inner">
+        <li><a href="/"><span class="icon doc"></span>blog</a></li>
+        <li><a href="/about"><span class="icon info"></span>about</a></li>
+        <li><a href="/projects"><span class="icon code"></span>projects</a></li>
+        <li><a href="http://spamthe.net"><span class="icon link"></span>links</a></li>
+        <li><a href="http://github.com/tybenz"><span class="icon github"></span>github</a></li>
+        <li><a href="http://twitter.com/tybenz"><span class="icon twitter"></span>twitter</a></li>
+      </div>
+    </ul>
+  </div>
+  <div class="wrapper">
+    <!--<h1><marquee scrolldelay="60">otter pop - the world's greatest jekyll theme</marquee></h1>-->
+    <h1>otter pop - the world's greatest jekyll theme</h1>
 
-		<div class="container">
+    {{ content }}
+  </div>
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-			<div class="col-sm-3">
-				<h1>{{ site.name }}</h1>
-				<img id="about" src="/img/logo.jpg" height="75px" width="75px" /><br />	
+    ga('create', 'UA-33073396-1', 'tybenz.com');
+    ga('send', 'pageview');
 
-				<strong>navigation</strong><br />
-				<a href="/">home</a> <br />
-				{% for i in site.urls %}
-					<a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
-				{% endfor %}
-				
-				{% if site.about %}
-				<div id="about">
-					<strong>about</strong><br />
-					{{ site.about }}
-				</div>
-				{% endif %}
-			</div>
-
-			<div class="col-sm-8 col-offset-1">
-				
-				{{ content }}
-				
-				<footer>
-					&copy; {{ site.name }}
-					{% if site.github %} 
-						- <a href="{{ site.github }}">{{ site.github }}</a>
-					{% endif %}
-				</footer>
-			</div>
-		
-		</div>
-
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    </body>
+  </script>
+</body>
 </html>
