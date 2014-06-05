@@ -1,37 +1,60 @@
 ---
 layout: default
+title: Home
+cover: false
+about: 'about.html'
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1>
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<header class="site-head" {% if page.cover %} style="background-image: url({{ page.cover }})"{% endif %}>
+    <div class="vertical">
+        <div class="site-head-content" class="inner">
+            {% if page.logo %}
+                <a class="blog-logo" href="{{ site.baseurl }}">
+                    <img src="{{ page.logo }}" alt="Blog Logo" />
+                </a>
+            {% endif %}
+            <h1 class="blog-title">{{ site.name }}</h1>
+            <h2 class="blog-description"> 
+                {{ site.description }}. 
+                {% if page.about %} <a href='{{ site.baseurl }}{{ page.about }}'> About me </a> {% endif %}
+            </h2>
+        </div>
+    </div>
+</header>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+<main class="content" role="main">
 
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
+    {% for post in paginator.posts %}
 
-<!-- Pagination links -->
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a href="/page{{paginator.next_page}}" class="older">Older</a>
-  {% else %}
-    <span class="next">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a href="/" class="newer">Newer</a>
-    {% else %}
-      <a href="/page{{paginator.previous_page}}" class="newer">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="previous">Newer</span>
-  {% endif %}
-</div>
+    <article class="post">
+        <header class="post-header">
+            <span class="post-meta"><time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date_to_string }}</time> {{!tags prefix="on "}}</span>
+            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+
+        </header>
+        <section class="post-excerpt">
+            {{ post.excerpt }}
+        </section>
+    </article>
+
+    {% endfor %}
+
+    <nav class="pagination" role="pagination">
+
+        {% if paginator.previous_page %}
+          {% if paginator.previous_page == 1 %}
+          <a class="newer-posts" href="/" title="Previous Page">&laquo; Newer Posts</a>
+          {% else %}
+          <a class="newer-posts" href="/page{{ paginator.previous_page }}/" title="Previous Page">&laquo; Newer Posts</a>
+          {% endif %}
+        {% endif %}
+
+        <span class="page-number"> Page {{paginator.page}} of {{paginator.total_pages}} </span>
+        
+        {% if paginator.next_page %} 
+        <a class="older-posts" href="/page{{ paginator.next_page }}/" title="Next Page">Older Posts &raquo;</a>
+        {% endif %} 
+    </nav>
+    
+
+</main>
