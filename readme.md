@@ -1,44 +1,63 @@
-# Minimal Mistakes
+Scribble
+========
 
-**[Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes)** is a two column responsive Jekyll theme perfect for powering your GitHub hosted blog.
+A jekyll theme. [Want a demo? click and read instruction. :point_left:](http://scribble.muan.co/2013/05/06/scribble-the-jekyll-theme/)
+<br />
+[More themes](https://github.com/muan/muan.github.com/releases).
 
-## Minimal Mistakes is all about:
+![screenshot](http://scribble.muan.co/images/screenshot.png)
 
-* Responsive templates. Looking good on mobile, tablet, and desktop.
-* Gracefully degrading in older browsers. Compatible with Internet Explorer 8+ and all modern browsers. 
-* Minimal embellishments -- content first.
-* Optional large feature images for posts and pages.
-* Simple and clear permalink structure.
-* [Custom 404 page](http://mmistakes.github.io/minimal-mistakes/404.html) to get you started.
-* Stylesheets for Pygments and Coderay [syntax highlighting](http://mmistakes.github.io/minimal-mistakes/articles/code-highlighting-post/) to make your code examples look snazzy.
+There is no clever design philosophy to talk about, I tried to find something to work with, and 'scribble' came to my mind. 
 
-![screenshot of Minimal Mistakes theme](http://mmistakes.github.io/minimal-mistakes/images/mm-theme-post-600.jpg)
+This theme uses Open Sans powered by Google Web Fonts, and was written in plain HTML, SCSS & CoffeeScript, though .scss & .coffee files wouldn't be included in the theme. 
 
-## Basic Setup for a new Jekyll site
-
-1. [Install Bundler](http://bundler.io) `gem install bundler` and then install [Jekyll](http://jekyllrb.com) and all dependencies `bundle install`.
-2. Fork the [Minimal Mistakes repo](http://github.com/mmistakes/minimal-mistakes/fork).
-3. Clone the repo you just forked and rename it.
-4. Edit `_config.yml` to personalize your site.
-5. Check out the sample posts in `_posts` to see examples for pulling in large feature images, assigning categories and tags, and other YAML data.
-
-[Demo the Theme](http://mmistakes.github.io/minimal-mistakes)
-
-**Pro-tip:** Delete the `gh-pages` branch after cloning and start fresh by branching off `master`. There is a bunch of garbage in `gh-pages` used for the theme's demo site that I'm guessing you don't need.
-
-## More Theme Setup Goodness
-
-To learn more about how customize this theme, include feature images in posts, use the Grunt build scripts, and some other junk, [read up here](http://mmistakes.github.io/minimal-mistakes/theme-setup/).
-
+The theme is mobile optimised but I did not check browser compatibility. It looks great in Chrome, Safari and Firefox though.
 
 ---
 
-## Questions?
+### Get started
 
-Having a problem getting something to work or want to know why I setup something in a certain way? Ping me on Twitter [@mmistakes](http://twitter.com/mmistakes) or [file a GitHub Issue](https://github.com/mmistakes/minimal-mistakes/issues/new). And if you make something cool with this theme feel free to let me know.
+1. [Fork the repository](https://github.com/muan/scribble/fork).
+2. Clone the repository to your computer.<br /> `git clone https://github.com/username/scribble`
+3. `bundle install`
+4. **Using older versions of Jekyll**<br />
+  Build and run jekyll using `jekyll --server --auto`.<br />
+  **Using [Jekyll 1.0](http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released/)**<br />
+  Build Jekyll using `jekyll build`.<br />
+  Then run Jekyll using `jekyll serve --watch`, go to http://localhost:4000 for your site.
 
 ---
 
-## License
+### Make it yours
 
-This theme is free and open source software, distributed under the [GNU General Public License](http://mmistakes.github.io/minimal-mistakes/LICENSE) version 2 or later. So feel free to use this Jekyll theme on your site without linking back to me or including a disclaimer. 
+1. I have extract most user specific information to `_config.yml`, you should be able to set up almost everything from it.
+2. Change about.md for blog intro.
+3. For domain settings, see [the guide from GitHub](https://help.github.com/articles/setting-up-a-custom-domain-with-pages).
+
+---
+
+### GitHub Pages stuff
+
+The `gh-pages` branch of this repository is [the project page](http://scribble.muan.co), which **should not** be used as your blog, so use `master` branch for your blog. This is assuming your blog repository will be called [your-username].github.io, if tis is not the case, you will need to delete the `gh-pages` repository and create a branch off the `master` branch. Hope that's clear.
+
+---
+
+### Options
+
+When writing a post, there are 3 options you can add to the header.
+
+1. **disqus: y**<br />
+  If disqus is set to 'y', at the end of the post there will be a disqus thread, just like this one. To use disqus, you MUST [set up your own disqus account](http://disqus.com/).
+
+2. **share: y**<br />
+  An option for showing tweet and like button under a post.
+
+3. **date**: 2013-05-06 18:07:17<br />
+  Date is not a required header since Jekyll reads the file name for date, this was added in only for the **signoff time**. (as shown at the end of this post) If you don't want the signoff time, go into `/includes/signoff.html` remove the `<span>`, and remove `{% include signoff.html %}` from `/layouts/post.html`.
+
+---
+
+### The end
+
+Like it? [Tell me](http://twitter.com/muanchiou).<br/>
+Question? [Use GitHub Issues](https://github.com/muan/scribble/issues).
