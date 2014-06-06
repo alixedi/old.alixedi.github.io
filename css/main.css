@@ -111,3 +111,7 @@ footer {
 .posts > li {
   padding-bottom: 50px;
 }
+
+blockquote {
+  background-color: #999;
+}
