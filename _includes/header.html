@@ -1,4 +1,17 @@
-<header>
-<a id="go-back-home" href="/"><img src="/images/scribble.png" alt="scribble" width="53" height="59"></a>
-<p>{{ site.title }}</p>
-</header>
+<h1 class="header" style="text-decoration: none; text-transform: lowercase;">
+  <a style="color: #000;" href="{{ site.baseurl }}/">{{ site.title }}</a>
+</h1>
+
+<p class="sub">
+  {{ site.description }}
+</p>
+
+<div class="menu">
+  <ul class="navlist">
+    {% for link in site.links %}
+    <li>
+      <a class="page-link" href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
