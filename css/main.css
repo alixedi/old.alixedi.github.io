@@ -93,6 +93,7 @@ h3 {
 }
 
 .highlight {
+  margin: 20px 0px;
   padding: 10px 0px;
   background-color: #444;
 }
@@ -113,7 +114,8 @@ footer {
 }
 
 blockquote {
-  background-color: #EEE;
+  background-color: #444;
+  color: #FFF;
   margin: 20px 0px;
   padding: 5px 20px;
 }
