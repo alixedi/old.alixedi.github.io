@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Introducing Django Coffee Table</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="So I was feeling nostalgic...">
+    <link rel="canonical" href="http://alixedi.github.io/2014/05/29/introducing-django-coffee-table/">
+    <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro:700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/pygments.css">
+</head>
+
+
+    <body>
+
+      <div class="container">
+
+        <h1 class="header" style="text-decoration: none; text-transform: lowercase;">
+  <a style="color: #000;" href="/">Typewriter</a>
+</h1>
+
+<p class="sub">
+  So I was feeling nostalgic...
+</p>
+
+<div class="menu">
+  <ul class="navlist">
+    
+    <li>
+      <a class="page-link" href="/about">About</a>
+    </li>
+    
+    <li>
+      <a class="page-link" href="http://twitter.com/alixedi">Twitter</a>
+    </li>
+    
+    <li>
+      <a class="page-link" href="http://github.com/alixedi">Github</a>
+    </li>
+    
+    <li>
+      <a class="page-link" href="/feed.xml">RSS</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+        <div class="post">
+
+  <header class="post-header">
+    <h1>Introducing Django Coffee Table</h1>
+  </header>
+
+  <article class="post-content">
+  <p>I was reading Things a little bird told me by Twitter co-founder Biz Stone the other day. I will review the work later but what stuck out as the take-away message is:</p>
+
+<p>Constraints drive innovation.</p>
+
+<p>Over at Bitswits - the startup that I have been running for the past couple of years, the biggest problem is HR. We cannot for the life of us get decent Python let alone Django developers in Pakistan. It seems .NET has a death grip on the campuses.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>On the other hand, it is significantly easier to hire good front-end people with some experience in templating. As a result, during the past year or so, Bitswits have evolved a spin on Django’s MVT (Model-View-Template) separation that we like to call M</td>
+      <td>V</td>
+      <td>T.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Essentially, a serious dearth of good Python hackers forces us to push every bit of presentation logic out to the templates. We do this by making template-composable web components.</p>
+
+<p>Coffee Table is one such project. Now I am not a big fan of re-inventing the wheel. So I thoroughly fiddled away at all the alternatives. Unfortunately, following example represents the state of affairs:</p>
+
+<pre><code>class SimpleTable(Table):
+    class Meta:
+        model = Simple
+        attrs = {''class'': ''mytable''}
+        sequence = ("name", "surname")
+</code></pre>
+
+<p>Enough said. Now take a look at the equivalent Coffee Table syntax. Remember that we are not writing Python anymore. This takes place in Django templates:</p>
+
+<pre><code>{% coffee_table 
+   objects
+   field_accessors=''name, surname'' 
+   table_class=''table table-condensed'' %}
+</code></pre>
+
+<p>And this is just the start. Following example shows off the full set of options:</p>
+
+<pre><code>{% coffee_table 
+   objects 
+   field_accessors=''name, surname'' 
+   table_class=''table table-condensed'' %}
+   paginate_by=''10''
+   checkbox_column=True
+   primary_key_column=True
+   help_text=True %}
+</code></pre>
+
+<p>The result: HTML table that can be composed by HTML people. Problem solved.</p>
+
+<p>So you ask: Wonderful! now how the heck do I use this? Well, you can get Coffee Table via cheese shop:</p>
+
+<pre><code>pip install django_coffee_table
+</code></pre>
+
+<p>Include coffee_table in your INSTALLED_APPS. Set up dependencies according to their respective docs:</p>
+
+<pre><code>linaro-django-pagination
+django-resort
+django-tag-parser
+</code></pre>
+
+<p>Now load up the template tags and rock-on like so:</p>
+
+<pre><code>{% load coffee_table %}
+{% coffe_table objects %}
+</code></pre>
+
+<p>If you find any issues, bones to pick, pat on the back or any other such business, head right over to Github and let it rip.</p>
+
+  </article>
+
+  <p class="meta">May 29, 2014</p>
+</div>
+
+
+        <footer class="site-footer">
+
+  My take on Typewriter - @alixedi
+
+</footer>
+
+
+      </div>
+
+    </body>
+</html>
