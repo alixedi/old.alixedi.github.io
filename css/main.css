@@ -114,4 +114,6 @@ footer {
 
 blockquote {
   background-color: #999;
+  margin-left: 0px;
+  padding 5px 0px;
 }
