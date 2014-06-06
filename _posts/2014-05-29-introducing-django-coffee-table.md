@@ -23,49 +23,47 @@ Essentially, a serious dearth of good Python hackers forces us to push every bit
 
 Coffee Table is one such project. Now I am not a big fan of re-inventing the wheel. So I thoroughly fiddled away at all the alternatives. Unfortunately, following example represents the state of affairs:
 
-class SimpleTable(Table):
-    class Meta:
-        model = Simple
-        attrs = {''class'': ''mytable''}
-        sequence = ("name", "surname")
+    class SimpleTable(Table):
+        class Meta:
+            model = Simple
+            attrs = {''class'': ''mytable''}
+            sequence = ("name", "surname")
 
 
 Enough said. Now take a look at the equivalent Coffee Table syntax. Remember that we are not writing Python anymore. This takes place in Django templates:
 
-{% coffee_table 
-   objects
-   field_accessors=''name, surname'' 
-   table_class=''table table-condensed'' %}
+    {% coffee_table 
+       objects
+       field_accessors=''name, surname'' 
+       table_class=''table table-condensed'' %}
 
 
 And this is just the start. Following example shows off the full set of options:
 
-{% coffee_table 
-   objects 
-   field_accessors=''name, surname'' 
-   table_class=''table table-condensed'' %}
-   paginate_by=''10''
-   checkbox_column=True
-   primary_key_column=True
-   help_text=True %}
-
+    {% coffee_table 
+       objects 
+       field_accessors=''name, surname'' 
+       table_class=''table table-condensed''
+       paginate_by=''10''
+       checkbox_column=True
+       primary_key_column=True
+       help_text=True %}
 
 The result: HTML table that can be composed by HTML people. Problem solved.
 
 So you ask: Wonderful! now how the heck do I use this? Well, you can get Coffee Table via cheese shop:
 
-pip install django_coffee_table
-
+    pip install django_coffee_table
 
 Include coffee_table in your INSTALLED_APPS. Set up dependencies according to their respective docs:
 
-linaro-django-pagination
-django-resort
-django-tag-parser
+    linaro-django-pagination
+    django-resort
+    django-tag-parser
+
 Now load up the template tags and rock-on like so:
 
-{% load coffee_table %}
-{% coffe_table objects %}
-
+    {% load coffee_table %}
+    {% coffe_table objects %}
 
 If you find any issues, bones to pick, pat on the back or any other such business, head right over to Github and let it rip.
