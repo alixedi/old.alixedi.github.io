@@ -11,4 +11,4 @@ published: true
 
 On the fallacy of focus-groups and the epic saga of “chunky spaghetti sauce”.
 
-<iframe src="http://embed.ted.com/talks/malcolm_gladwell_on_spaghetti_sauce.html" width="560" height="315" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="http://embed.ted.com/talks/malcolm_gladwell_on_spaghetti_sauce.html" width="300" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
