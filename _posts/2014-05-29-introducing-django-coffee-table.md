@@ -66,9 +66,7 @@ So you ask: Wonderful! now how the heck do I use this? Well, you can get Coffee 
 Include coffee_table in your INSTALLED_APPS. Set up dependencies according to their respective docs:
 
 * linaro-django-pagination
-
 * django-resort
-
 * django-tag-parser
 
 Now load up the template tags and rock-on like so:
