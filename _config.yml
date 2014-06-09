@@ -1,6 +1,6 @@
 # Site settings
-title: "alixedi"
-description: "I make stuff."
+title: "Typewriter"
+description: "So I was feeling nostalgic."
 baseurl: ""
 url: "http://alixedi.github.io"
 
@@ -8,14 +8,15 @@ url: "http://alixedi.github.io"
 markdown: kramdown
 permalink: pretty
 highlighter: pygments
+paginate: 3
 
 # Links
 links:
-  - title: "About"
+  - title: "abt"
     url: /about
-  - title: "Twitter"
+  - title: "twt"
     url: http://twitter.com/alixedi
-  - title: "Github"
+  - title: "git"
     url: http://github.com/alixedi
-  - title: "RSS"
+  - title: "rss"
     url: /feed.xml
