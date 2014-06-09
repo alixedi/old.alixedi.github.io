@@ -25,32 +25,32 @@ Enter Sieve. I spent a couple of days writing it. After which, following code so
 Create the control model - the one that stores which sales rep has access to which companies and country:
 
 {% highlight Python %}
-    class Sieve(models.Model):
-        group = models.ForeignKey('auth.Group')
-        companies = models.ManyToManyField('Company')
-        country = models.ForeignKey('Country')
+class Sieve(models.Model):
+	group = models.ForeignKey('auth.Group')
+	companies = models.ManyToManyField('Company')
+	country = models.ForeignKey('Country')
 {% endhighlight %}
 
 Identify the sieve model in your settings.py:
 
 {% highlight Python %}
-    SIEVE_MODEL = 'crm.Sieve'
+SIEVE_MODEL = 'crm.Sieve'
 {% endhighlight %}
 
 Over-ride the ModelManagers for the models that you want filtered:
 
 {% highlight Python %}
-    class Country(models.Model):
-            name = models.CharField(max_length=30)
-            dialcode = models.DialcodeField()
-            objects = SieveManager()
+class Country(models.Model):
+  	name = models.CharField(max_length=30)
+	dialcode = models.DialcodeField()
+	objects = SieveManager()
 {% endhighlight %}
 
 Rock-on like so:
 
 {% highlight Python %}
-    class CoutryView(ListView):
-        objects = Country.objects.sieve(user=request.user)
+class CoutryView(ListView):
+	objects = Country.objects.sieve(user=request.user)
 {% endhighlight %}
 
 That is all. Site-wide filtering of user data based on predefined criteria without having to write queries for all the views.
