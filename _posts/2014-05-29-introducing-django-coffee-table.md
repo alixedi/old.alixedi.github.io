@@ -33,16 +33,16 @@ Coffee Table is one such project. Now I am not a big fan of re-inventing the whe
 
 Enough said. Now take a look at the equivalent Coffee Table syntax. Remember that we are not writing Python anymore. This takes place in Django templates:
 
-{% highlight %}
+{% raw %}
     {% coffee_table 
        objects
        field_accessors='name, surname' 
        table_class='table table-condensed' %}
-{% endhighlight %}
+{% endraw %}
 
 And this is just the start. Following example shows off the full set of options:
 
-{% highlight %}
+{% raw %}
     {% coffee_table 
        objects 
        field_accessors='name, surname'
@@ -51,7 +51,7 @@ And this is just the start. Following example shows off the full set of options:
        checkbox_column=True
        primary_key_column=True
        help_text=True %}
-{% endhighlight %}
+{% endraw %}
 
 The result: HTML table that can be composed by HTML people. Problem solved.
 
@@ -67,9 +67,9 @@ Include coffee_table in your INSTALLED_APPS. Set up dependencies according to th
 
 Now load up the template tags and rock-on like so:
 
-{% highlight %}
+{% raw %}
     {% load coffee_table %}
     {% coffe_table objects %}
-{% endhighlight %}
+{% endraw %}
 
 If you find any issues, bones to pick, pat on the back or any other such business, head right over to [Github](https://github.com/alixedi) and shout.
