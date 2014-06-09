@@ -26,15 +26,15 @@ Create the control model - the one that stores which sales rep has access to whi
 
 {% highlight Python %}
     class Sieve(models.Model):
-        group = models.ForeignKey(‘auth.Group’)
-        companies = models.ManyToManyField(‘Company’)
-        country = models.ForeignKey(‘Country’)
+        group = models.ForeignKey('auth.Group')
+        companies = models.ManyToManyField('Company')
+        country = models.ForeignKey('Country')
 {% endhighlight %}
 
 Identify the sieve model in your settings.py:
 
 {% highlight Python %}
-    SIEVE_MODEL = ‘crm.Sieve’
+    SIEVE_MODEL = 'crm.Sieve'
 {% endhighlight %}
 
 Over-ride the ModelManagers for the models that you want filtered:
