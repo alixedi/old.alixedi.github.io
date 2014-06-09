@@ -24,21 +24,22 @@ Essentially, a serious dearth of good Python hackers forces us to push every bit
 Coffee Table is one such project. Now I am not a big fan of re-inventing the wheel. So I thoroughly fiddled away at all the alternatives. Unfortunately, following example represents the state of affairs:
 
 {% highlight Python %}
-    class SimpleTable(Table):
-        class Meta:
-            model = Simple
-            attrs = {'class': 'mytable'}
-            sequence = ('name', 'surname')
+class SimpleTable(Table):
+	class Meta:
+        model = Simple
+        attrs = {'class': 'mytable'}
+        sequence = ('name', 'surname')
 {% endhighlight %}
 
 Enough said. Now take a look at the equivalent Coffee Table syntax. Remember that we are not writing Python anymore. This takes place in Django templates:
 
 {% highlight Python %}
 {% raw %}
-    {% coffee_table 
-       objects
-       field_accessors='name, surname' 
-       table_class='table table-condensed' %}
+{% coffee_table 
+	objects
+	field_accessors='name, surname' 
+	table_class='table table-condensed' 
+%}
 {% endraw %}
 {% endhighlight %}
 
@@ -46,14 +47,15 @@ And this is just the start. Following example shows off the full set of options:
 
 {% highlight Python %}
 {% raw %}
-    {% coffee_table 
-       objects 
-       field_accessors='name, surname'
-       table_class='table table-condensed'
-       paginate_by=10
-       checkbox_column=True
-       primary_key_column=True
-       help_text=True %}
+{% coffee_table 
+	objects 
+	field_accessors='name, surname'
+	table_class='table table-condensed'
+	paginate_by=10
+	checkbox_column=True
+	primary_key_column=True
+	help_text=True 
+%}
 {% endraw %}
 {% endhighlight %}
 
@@ -73,8 +75,8 @@ Now load up the template tags and rock-on like so:
 
 {% highlight Python %}
 {% raw %}
-    {% load coffee_table %}
-    {% coffe_table objects %}
+{% load coffee_table %}
+{% coffe_table objects %}
 {% endraw %}
 {% endhighlight %}
 
