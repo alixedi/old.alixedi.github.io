@@ -11,4 +11,4 @@ published: true
 
 To replace a text with another for every file in a directory:
 
-> grep -rl ''ST2'' ./ | xargs sed -i ''s/ST2/Vim/g''
+> grep -rl "ST2" ./ | xargs sed -i "s/ST2/Vim/g"
