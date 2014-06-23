@@ -17,12 +17,12 @@ The popup views are implemented using a mixin to the generic CreateView. Also, t
 
 In order to use django-popcorn in your project, follow these steps: 
 
-1. Include the following in your `INSTALLED_APPS` settings: :
+1. Include the following in your `INSTALLED_APPS` settings:
 
 > 'popcorn',
 
 
-2. Add this to your `settings.py` (If you do not already have it): :
+2. Add this to your `settings.py` (If you do not already have it):
 
     {% highlight python  %}
     TEMPLATE_CONTEXT_PROCESSORS = (
@@ -40,14 +40,14 @@ In order to use django-popcorn in your project, follow these steps:
     {% endhighlight  %}
 
 
-3. Add the following to your `base.html` template: :
+3. Add the following to your `base.html` template:
 
     {% highlight  html %}
     <script src="{{ ADMIN_MEDIA_PREFIX }}js/admin/RelatedObjectLookups.js"></script>
     {% endhighlight  %}
 
 
-4. We will create a view for `auth.User` and use the utility `get_popcorn_urls` function to generate popcorn views and urls: :
+4. We will create a view for `auth.User` and use the utility `get_popcorn_urls` function to generate popcorn views and urls:
 
     {% highlight python %}
     urlpatterns = patterns('',
@@ -61,7 +61,7 @@ In order to use django-popcorn in your project, follow these steps:
     {% endhighlight %}
 
 
-7. Render your forms like so: :: 
+7. Render your forms like so:
 
     {%  highlight html %}
     {% raw %}
