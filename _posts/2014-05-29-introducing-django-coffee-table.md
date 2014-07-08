@@ -17,7 +17,7 @@ I was reading Things a little bird told me by Twitter co-founder Biz Stone the o
 
 Over at [Bitswits](www.bitswits.com) - the startup that I have been running for the past couple of years, the biggest problem is HR. We cannot for the life of us get decent Python let alone Django developers in Pakistan. It seems .NET has a death grip on the campuses.
 
-On the other hand, it is significantly easier to hire good front-end people with some experience in templating. As a result, during the past year or so, Bitswits have evolved a spin on Django’s MVT (Model-View-Template) separation that we like to call M|V|T.
+On the other hand, it is significantly easier to hire good front-end people with some experience in templating. As a result, during the past year or so, Bitswits have evolved a spin on Django’s MVT (Model-View-Template) separation that we like to call M/V/T.
 
 Essentially, a serious dearth of good Python hackers forces us to push every bit of presentation logic out to the templates. We do this by making template-composable web components.
 
