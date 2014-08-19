@@ -48,7 +48,7 @@ A `FilteredFeed` class like so:
 
         def item_link(self, item):
             return reverse('book_detail', 
-            			   args=[item.id])
+                           args=[item.id])
     {% endhighlight  %}
 
 Hook up the necessary urls like so:
