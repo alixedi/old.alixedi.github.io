@@ -13,7 +13,7 @@ tags:
 published: true
 ---
 
-So the average-joe RSS is binary ie either you subscribe to a feed or you don’t. This approach results in a ridiculous amount of junk in our inbox. What if we could subscribe `define` the feed that we would like to subscribe to? Thanks to the stellar [django syndication framework][] and [django filters][], I was able to hack together a fix.
+So the average-joe RSS is binary ie either you subscribe to a feed or you don’t. This approach results in a ridiculous amount of junk in our inbox. What if we could subscribe `define` the feed that we would like to subscribe to? Thanks to the stellar [django syndication framework](https://docs.djangoproject.com/en/dev/ref/contrib/syndication/) and [django filters](https://github.com/alex/django-filter), I was able to hack together a fix.
 
 If you have a `Book` model like so:
 
@@ -26,7 +26,7 @@ If you have a `Book` model like so:
         return self.name
     {% endhighlight  %}
 
-A [django\_filter][django filters] `FilterSet` like so:
+A [django filters](https://github.com/alex/django-filter) `FilterSet` like so:
 
     {% highlight python  %}
     class BookFilterSet(django_filters.FilterSet):
@@ -44,7 +44,7 @@ A `FilteredFeed` class like so:
         filter_set = BookFilterSet
         title = "BookFeed"
         link = "http://localhost:8000"
-        description = "Get alerts for new books - less than given number of pages!"
+        description = "Alerts for new books!"
 
         def item_link(self, item):
             return reverse('book_detail', args=[item.id])
@@ -54,7 +54,9 @@ Hook up the necessary urls like so:
 
     {% highlight python  %}
     urlpatterns = patterns('',
-        url(r'^books/feed$', BookFilteredFeed.as_view(), name='book_feed'),
+        url(r'^books/feed$', 
+            BookFilteredFeed.as_view(), 
+            name='book_feed'),
     )
     {% endhighlight  %}
 
@@ -64,13 +66,13 @@ And finally, if we have the following 3 books in our DB:
 2.  Introduction to C (300 pages)
 3.  Javascript - The good parts (300 pages)
 
-Hitting [<http://localhost:8000/books/feed>][] will give you an RSS feed includes:
+Hitting [http://localhost:8000/books/feed](http://localhost:8000/books/feed) will give you an RSS feed includes:
 
 -   Introduction to Python
 -   Introduction to C
 -   Javascript - The good parts
 
-And hitting [<http://localhost:8000/books/feed?pages=200>][] will give you an RSS feed that just includes:
+And hitting [http://localhost:8000/books/feed?pages=200](http://localhost:8000/books/feed?pages=200) will give you an RSS feed that just includes:
 
 -   Introduction to Python
 
@@ -86,8 +88,4 @@ Followed ofcourse by including `filtered_feed` in your `INSTALLED_APPS`.
         'filtered_feed',
         ...
     )
-<<<<<<< HEAD
     {% endhighlight  %}
-=======
-```
->>>>>>> FETCH_HEAD
