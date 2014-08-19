@@ -20,28 +20,28 @@ So the average-joe RSS is binary ie either you subscribe to a feed or you don’
 
 If you have a `Book` model like so:
 
-```python
+    {% highlight python  %}
     class Book(models.Model):
         name = models.CharField(max_length=256)
         pages = models.IntegerField()
 
     def __unicode__(self):
         return self.name
-```
+    {% endhighlight  %}
 
 A [django\_filter][django filters] `FilterSet` like so:
 
-```python
+    {% highlight python  %}
     class BookFilterSet(django_filters.FilterSet):
         pages = django_filters.NumberFilter(lookup_type='lt')
         class Meta:
             model = Book
             fields = ['pages']
-```
+    {% endhighlight  %}
 
 A `FilteredFeed` class like so:
 
-```python
+    {% highlight python  %}
     class BookFilteredFeed(BaseFilteredFeed):
         model = Book
         filter_set = BookFilterSet
@@ -51,15 +51,15 @@ A `FilteredFeed` class like so:
 
         def item_link(self, item):
             return reverse('book_detail', args=[item.id])
-```
+    {% endhighlight  %}
 
 Hook up the necessary urls like so:
 
-```python
+    {% highlight python  %}
     urlpatterns = patterns('',
         url(r'^books/feed$', BookFilteredFeed.as_view(), name='book_feed'),
     )
-```
+    {% endhighlight  %}
 
 And finally, if we have the following 3 books in our DB:
 
@@ -79,14 +79,14 @@ And hitting [<http://localhost:8000/books/feed?pages=200>][] will give you an RS
 
 You users will forever remain grateful for sparing them the deluge that follows a binary subscription. You will be hailed the king of syndication, worshipped as a rock star and live happily ever after. The best part is that it takes a minute to get started:
 
-    pip install django_filtered_feed
+> pip install django_filtered_feed
 
 Followed ofcourse by including `filtered_feed` in your `INSTALLED_APPS`.
 
-```python
+    {% highlight python  %}
     INSTALLED_APPS = (
         ...
         'filtered_feed',
         ...
     )
-```
+    {% endhighlight  %}
