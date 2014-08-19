@@ -30,7 +30,7 @@ A [django filters](https://github.com/alex/django-filter) `FilterSet` like so:
 
     {% highlight python  %}
     class BookFilterSet(django_filters.FilterSet):
-        pages = django_filters.NumberFilter(lookup_type='lt')
+        pages = NumberFilter(lookup_type='lt')
         class Meta:
             model = Book
             fields = ['pages']
@@ -47,7 +47,8 @@ A `FilteredFeed` class like so:
         description = "Alerts for new books!"
 
         def item_link(self, item):
-            return reverse('book_detail', args=[item.id])
+            return reverse('book_detail', 
+            			   args=[item.id])
     {% endhighlight  %}
 
 Hook up the necessary urls like so:
