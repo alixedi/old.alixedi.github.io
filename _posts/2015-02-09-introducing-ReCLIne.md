@@ -25,10 +25,10 @@ Option-A
 * Install the various dependencies on Bob's MS Windows laptop.
 * Teach Bob that there is a thing called `terminal` and it has nothing to do with disease, cures and people dying for that matter.
 * Teach Bob how to run the thing on the (newly discovered) terminal thing. For instance:
-  * You: Just type `$ python go-baby-go.py <my_spresheet>`
-  * Bob: [$ $ python...] It's SHIT!
+  * You: Just type `$ python go-baby-go.py <my_spreadsheet>`
+  * Bob: [`$ $ python...`] It's SHIT!
   * You: Don't type the `$` Bob!
-  * Bob: [$ python go-baby-go.py <my_spreadheet>] It's SHIT!
+  * Bob: [`$ python go-baby-go.py <my_spreadsheet>`] It's SHIT!
   * You: Sigh! I'm coming over.
   * Bob: Right! Why can't you just make it like Excel.
 
@@ -37,7 +37,7 @@ Option-B
 --------
 
 * Pick up some random Python GUI library
-* Please don't. Do you have any friends? Seriously?
+* Please don't. Don't you have any friends? 
 
 
 Option-C
