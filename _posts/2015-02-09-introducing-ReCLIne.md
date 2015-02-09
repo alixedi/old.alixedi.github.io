@@ -26,9 +26,9 @@ Option-A
 * Teach Bob that there is a thing called `terminal` and it has nothing to do with disease, cures and people dying for that matter.
 * Teach Bob how to run the thing on the (newly discovered) terminal thing. For instance:
   * You: Just type `$ python go-baby-go.py <my_spresheet>`
-  * Bob: [$ $ python...] It's SHIT!
+  * Bob: [`$ $ python...`] It's SHIT!
   * You: Don't type the `$` Bob!
-  * Bob: [$ python go-baby-go.py <my_spreadheet>] It's SHIT!
+  * Bob: [`$ python go-baby-go.py <my_spreadheet>`] It's SHIT!
   * You: Sigh! I'm coming over.
   * Bob: Right! Why can't you just make it like Excel.
 
