@@ -13,7 +13,7 @@ tags:
 published: true
 ---
 
-So the average-joe RSS is binary ie either you subscribe to a feed or you don’t. This approach results in a ridiculous amount of junk in our inbox. What if we could subscribe `define` the feed that we would like to subscribe to? Thanks to the stellar [django syndication framework](https://docs.djangoproject.com/en/dev/ref/contrib/syndication/) and [django filters](https://github.com/alex/django-filter), I was able to hack together a fix.
+So the average-joe RSS is binary ie either you subscribe to a feed or you don’t. This approach results in a ridiculous amount of junk in our inbox. What if we could `define` the feed that we would like to subscribe to? Thanks to the stellar [django syndication framework](https://docs.djangoproject.com/en/dev/ref/contrib/syndication/) and [django filters](https://github.com/alex/django-filter), I was able to hack together a fix.
 
 If you have a `Book` model like so:
 
